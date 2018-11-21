@@ -103,11 +103,7 @@ public class Array<E> {
      */
     public void add(int index, E value) {
         if (index < 0 || index > size) {
-            try {
-                throw new IllegalAccessException("Add failed. Require index>=0 and index<=size");
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
+            throw new IllegalArgumentException("Add failed. Require index>=0 and index<=size");
         }
         // 动态增量
         if (size == data.length) {
