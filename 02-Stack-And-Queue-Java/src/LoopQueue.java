@@ -58,11 +58,7 @@ public class LoopQueue<E> implements Queues<E> {
     public E dequeue() {
 
         if (isEmpty()) {
-            try {
-                throw new IllegalAccessException("Cannot dequeue from empty queue");
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
+            throw new IllegalArgumentException("Cannot dequeue from empty queue");
         }
 
         E ret = data[front];
@@ -79,11 +75,7 @@ public class LoopQueue<E> implements Queues<E> {
     public E getFront() {
 
         if (isEmpty()) {
-            try {
-                throw new IllegalAccessException("Cannot dequeue from empty queue");
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
+            throw new IllegalArgumentException("Cannot dequeue from empty queue");
         }
         return data[front];
     }
