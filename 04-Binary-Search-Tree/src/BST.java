@@ -210,7 +210,7 @@ public class BST<E extends Comparable<E>> {
         if (node.left == null) {
             return node;
         }
-        return minimum(node.right);
+        return minimum(node.left);
     }
 
     // 返回以node为根的二分搜索的最大值所在节点
